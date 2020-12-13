@@ -22,7 +22,7 @@
   padding-bottom: 50px;
 }
 
- .products .product-badge{
+.products .product-badge{
   position: absolute;
   top: 25px;
   left: 25px;
@@ -33,11 +33,11 @@
   color: white;
 }
 
- .products .column:hover .product-action{
+.products .column:hover .product-action{
   display: block;
 }
 
- .products .product-action{
+.products .product-action{
   position: absolute;
   display: none;
   top: 25px;
@@ -45,7 +45,7 @@
   font-size: 14px;
 }
 
- .products .product-action span{
+.products .product-action span{
   background-color: white;
   color: black;
   border-radius: 10px;
@@ -53,7 +53,7 @@
   display: block;
 }
 
- .products .product-action span:hover{
+.products .product-action span:hover{
   background-color: sandybrown;
   color: white;
 }
@@ -61,6 +61,18 @@
 .best-seller,.services{
   padding-top:  50px;
   padding-bottom: 50px;
+}
+
+.services{
+  background-color: #f8f8f8;
+}
+
+.services .service-item{
+  padding: 0px 3rem;
+}
+
+.services .service-item:not(:first-child){
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .services h1{
