@@ -1,0 +1,48 @@
+/* ==== Google Fonts ==== */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&display=swap');
+@import '__variable.css';
+@import '__global.css';
+
+/* ==== Mobile CSS ==== */
+.hero{
+  height: 670px;
+  width: 100%;
+}
+
+.hero--caption{
+  width: 50%;
+}
+
+.hero--caption .large-text{
+  font-size: 2.4em;
+}
+
+.footer{
+  box-shadow: var(--shadow-bg);
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.footer .links{
+  margin-top: var(--size-2);
+}
+.footer .links a{
+  color: #afafaf;
+  display: block;
+}
+
+.gotop{
+  bottom: 30px;
+  right: 3rem;
+  padding: 4px 8px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* ==== Desktop CSS ==== */
+@media (min-width: 768px) {
+
+}
