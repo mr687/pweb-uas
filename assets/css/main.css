@@ -17,6 +17,10 @@
   font-size: 2.4em;
 }
 
+.trending{
+  padding-top: 50px;
+}
+
 .footer{
   box-shadow: var(--shadow-bg);
   padding-top: 50px;

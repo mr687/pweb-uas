@@ -185,6 +185,10 @@ a.btn-black:hover{
   padding: 1rem;
 }
 
+.column:not(:first-child){
+  margin-left: 15px !important;
+}
+
 .navigation {
   display: flex;
 }
