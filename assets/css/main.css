@@ -19,6 +19,56 @@
 
 .trending{
   padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+ .products .product-badge{
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  background-color: sandybrown;
+  border-radius: 10px;
+  padding: 5px 8px;
+  font-size: 14px;
+  color: white;
+}
+
+ .products .column:hover .product-action{
+  display: block;
+}
+
+ .products .product-action{
+  position: absolute;
+  display: none;
+  top: 25px;
+  right: 25px;
+  font-size: 14px;
+}
+
+ .products .product-action span{
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  padding: 5px 8px;
+  display: block;
+}
+
+ .products .product-action span:hover{
+  background-color: sandybrown;
+  color: white;
+}
+
+.best-seller,.services{
+  padding-top:  50px;
+  padding-bottom: 50px;
+}
+
+.services h1{
+  font-size: 3rem;
+}
+
+.services a{
+  display: block;
 }
 
 .footer{
