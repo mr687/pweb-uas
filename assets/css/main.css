@@ -4,6 +4,11 @@
 @import '__global.css';
 
 /* ==== Mobile CSS ==== */
+.topbar{
+  display: flex;
+  justify-content: space-between;
+}
+
 .hero{
   height: 670px;
   width: 100%;
