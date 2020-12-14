@@ -108,6 +108,7 @@ a > i{
 
 .m-top-1 {
   margin-top: var(--size-1);
+  margin-bottom: var(--size-2);
 }
 
 .m-top-2 {
@@ -187,6 +188,7 @@ a.btn-black:hover{
 .row {
   display: flex;
   justify-content: space-evenly;
+  flex-direction: row;
 }
 
 .column {
@@ -256,4 +258,44 @@ a.btn-black:hover{
 .carousel--item{
   min-width: 100%;
   scroll-snap-align: center;
+}
+
+.services{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+@media (max-width: 1000px) {
+
+  
+
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .row>* {
+    flex: 1 1 160px;
+  }
+
+}
+
+@media (max-width: 680px) {
+  
+  .services {
+    flex-direction: column;
+  }
+
+  .services .fas{
+    padding-top: var(--size-2);
+  }
+
+  .services .m-top-2{
+    padding-bottom: var(--size-2);
+  }
+
+  .services .service-item:not(:first-child){
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
 }
