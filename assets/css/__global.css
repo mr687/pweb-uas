@@ -122,12 +122,24 @@ a > i{
   margin-top: var(--size-4);
 }
 
+.d-flex{
+  display: flex;
+}
+
+.d-none{
+  display: none;
+}
+
 .f-right {
   float: right;
 }
 
 .f-left {
   float: left;
+}
+
+.pointer{
+  cursor: pointer;
 }
 
 .fixed {

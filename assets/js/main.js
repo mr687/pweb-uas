@@ -6,12 +6,19 @@ let display = (e,x) => {
   if (x === undefined){
     x = 'block';
   }
-  e.style.display = x;
+  if (e instanceof Element || 
+      e instanceof HTMLDocument){
+    e.style.display = x;
+  }else{
+    let el = document.querySelector(e);
+    el.style.display = x;
+  }
 };
-let padding = (e,n) => {
-  if (x === undefined) return;
-  e.style.padding = n;
-  console.log('hai');
+
+let showElement = (selector) => {
+  if (selector === undefined) return;
+  let element = document.querySelector(selector);
+  element.style.display = 'block';
 };
 
 let scrollToPrev = () => {

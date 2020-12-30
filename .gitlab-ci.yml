@@ -1,0 +1,25 @@
+image: ubuntu:latest
+
+stages:
+  - test
+  - deploy
+
+before_script:
+  - apt-get update -qq
+  - apt-get install -qq git
+  # Setup SSH deploy keys
+  - "which ssh-agent || ( apt-get install -qq openssh-client )"
+  - eval $(ssh-agent -s)
+  - ssh-add <(echo "$SSH_PRIVATE_KEY")
+  - mkdir -p ~/.ssh
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+deploy_master:
+  stage: deploy
+  environment:
+    name: master
+    url: semangat.in
+  script:
+    - ssh ubuntu@54.243.198.253 '/bin/bash -c "cd /var/www/ngoder.com/dreamroom/ && git stash && git checkout master && git pull origin master && sudo chown ubuntu:www-data /var/www/ngoder.com/dreamroom -R" && exit'
+  only:
+    - master
