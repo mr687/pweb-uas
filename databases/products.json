@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Arctander Chair543566",
+    "price": 500000,
+    "picture": "./assets/products/chair_trending.jpg",
+    "views": 100,
+    "sales": 0
+  },
+  {
+    "id": 2,
+    "name": "Arctander Chair 2345",
+    "price": 500000,
+    "picture": "./assets/products/chair_trending.jpg",
+    "views": 70,
+    "sales": 3
+  },
+  {
+    "id": 3,
+    "name": "Arctander Chair 234",
+    "price": 500000,
+    "picture": "./assets/products/chair_trending.jpg",
+    "views": 50,
+    "sales": 5
+  },
+  {
+    "id": 4,
+    "name": "Arctander Chair 546457568",
+    "price": 500000,
+    "picture": "./assets/products/chair_trending.jpg",
+    "views": 5,
+    "sales": 67
+  }
+]
