@@ -40,11 +40,11 @@
     "name": "Fabric Armchair",
     "price": 1700000,
     "picture": "./assets/products/Fabric_Armchair.jpg",
-    "views": 50,
-    "sales": 5,
+    "views": 20,
+    "sales": 10,
     "sort_desc": "‎Bantal kursi tebal dengan kapas peregangan di dalamnya mengurangi tekanan pada pinggul secara efektif sementara bantal backrest yang tegas dan bantal tambahan memberikan dukungan yang cukup ke punggung Anda. Permukaan kain linen yang lembut dan bernapas ramah terhadap kulit Anda.‎",
     "description": "<P><b>Modern & Simple Style :</b>‎Kursi aksen dirancang dengan gaya minimalis. Bingkai kayunya yang kokoh diberi hasil akhir yang halus setelah beberapa semprotan cat. Beberapa warna untuk dipilih, dapat berbaur menjadi dekorasi ruang tamu, kamar tidur, balkon Anda‎.<br><b>Dimensi :</b><br>26x31x28 inchi</P>",
-    "stocks":15,
+    "stocks":7,
     "category": "Kursi",
     "reviews": [
       {
@@ -56,13 +56,13 @@
   {
     "id": 4,
     "name": "HUIMO Armchair",
-    "price": 500000,
+    "price": 250000,
     "picture": "./assets/products/HUIMO_Armchair.jpg",
-    "views": 5,
-    "sales": 67,
+    "views": 70,
+    "sales": 17,
     "sort_desc": "Our accent chairs are very comfortable with the humanized design of the curved backrest and with large enough cushion",
     "description": "<p><b>SOLID WOOD & DURABLE :</b><br>‎Sandaran tangan dan bingkai terbuat dari kayu padat, tidak ada bau aneh, tidak ada perbedaan warna, dan kursi baca sangat kokoh yang dapat menampung hingga 300 pon (kapasitas beban statis). Kain bantal tidak mudah untuk pil, keriput atau cacat, terlihat baru bahkan setelah penggunaan jangka panjang.‎<br><b>Dimensi : </b><br>31x21x59 inchi</b></p>",
-    "stocks":15,
+    "stocks":3,
     "category": "Kursi",
     "reviews": [
       {
@@ -72,20 +72,74 @@
     ]
   },
   {
-    "id": 4,
-    "name": "HUIMO Armchair",
+    "id": 5,
+    "name": "Modway Linnea Bed",
     "price": 500000,
-    "picture": "./assets/products/HUIMO_Armchair.jpg",
+    "picture": "./assets/products/Modway_Linnea_bed.jpg",
     "views": 5,
     "sales": 67,
-    "sort_desc": "Our accent chairs are very comfortable with the humanized design of the curved backrest and with large enough cushion",
-    "description": "<p><b>SOLID WOOD & DURABLE :</b><br>‎Sandaran tangan dan bingkai terbuat dari kayu padat, tidak ada bau aneh, tidak ada perbedaan warna, dan kursi baca sangat kokoh yang dapat menampung hingga 300 pon (kapasitas beban statis). Kain bantal tidak mudah untuk pil, keriput atau cacat, terlihat baru bahkan setelah penggunaan jangka panjang.‎<br><b>Dimensi : </b><br>31x21x59 inchi</b></p>",
+    "sort_desc": "Tingkatkan kamar tidur remaja atau tamu dengan tempat tidur platform profil rendah modern dengan garis-garis bersih dan nuansa kontemporer. Tempat tidur penuh berlapis abadi dengan desain jahitan persegi",
+    "description": "<p><b>UPHOLSTERED BED : </b><br>‎Duduk sambil membaca cerita pengantar tidur di tempat tidur dengan headboard penuh empuk suportif yang dilapisi kain poliester lembut dengan jumbai. Termasuk tutup kaki untuk lantai kayu‎<br><b>Dimensi : </b><br>81 x 60 x 36.5 inchi</p>",
     "stocks":15,
-    "category": "Kursi",
+    "category": "Kasur",
     "reviews": [
       {
-        "nama": "Sule",
-        "text": "Desainnya sangat unik!"
+        "nama": "Davi",
+        "text": "Sangat nyaman"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Modway Della Vinyl Bed",
+    "price": 235000,
+    "picture": "./assets/products/Modway_Della_Vinyl_Bed.jpg",
+    "views": 20,
+    "sales": 7,
+    "sort_desc": "‎Tidur nyenyak dengan Tempat Tidur Platform Della. Dengan sentuhan pesona dan kegembiraan, desain headboard Della yang dipasangkan memberikan tampilan yang menyegarkan sementara rangka baja yang diperkuat sangat mendukung dari bawah. Lengkap dengan sistem batang yang menghilangkan kebutuhan akan pegas kotak, Della menyajikan berbagai jenis kasur di pasaran seperti busa memori, musim semi, lateks dan hibrida, dan mempertahankan kapasitas berat hingga 1300lbs. Headboard della yang dipasangkan dilengkapi dengan halus dilapisi vinil dengan alas yang dilengkapi dengan tutup kaki yang tidak menandai. Tahan lama dan kokoh, Della adalah jangkar kamar tidur yang cocok untuk rumah modern.‎",
+    "description": "<p><b>Platform Bed Frame With Headboard</b><br><b>Sturdy Powder Coated Steel Frame</b><br><b>Steel Rod Mattress Support System</b><br><b>Upholstered Vinyl Headboard</b><br><b>Non-Marking Foot Caps</b></p>",
+    "stocks":5,
+    "category": "Kasur",
+    "reviews": [
+      {
+        "nama": "Nando",
+        "text": "Desainnya sangat cocok untuk ruangan berwarna gelap"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Hillsdale Furniture Lawler Bed",
+    "price": 310000,
+    "picture": "./assets/products/Hillsdale_Furniture_Lawler_Bed.jpg",
+    "views": 60,
+    "sales": 3,
+    "sort_desc": "‎‎Gaya minimalis dengan detail yang cukup untuk menjaga hal-hal menarik. Hillsdale Furniture Lawler Bed bersih dan ramping dengan headboard berlapis yang menggabungkan lengkungan terbalik yang lembut di sudut-sudutnya. Tempat tidur berlapis berlapis ukuran penuh ini memiliki kain Cream lembut yang melengkapi skema warna apa pun. Set ini berisi semua yang Anda butuhkan untuk meningkatkan gaya kamar tidur Anda. Termasuk headboard dan footboard dan side rail. Kasur dan pegas kotak diperlukan; tidak termasuk. Perakitan diperlukan.‎",
+    "description": "<p><b>Easy neutrals and fabrics come together with a classic, no frills headboard design</b><br><b>Comes in sizes twin, full, queen and king</b></p>",
+    "stocks":10,
+    "category": "Kasur",
+    "reviews": [
+      {
+        "nama": "Nanda",
+        "text": "Desainnya sangat elegan"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Ravenna Home Springdale Table",
+    "price": 310000,
+    "picture": "./assets/products/Ravenna_Home_Springdale.jpg",
+    "views": 123,
+    "sales": 50,
+    "sort_desc": "‎‎‎Kami percaya furnitur harus bertahan, dan gaya harus abadi. Kami pikir belanja harus tanpa rasa sakit dan pengiriman harus gratis. Kami berkomitmen untuk membuat furnitur terbaik dengan harga terendah yang akan terlihat bagus dari tahun ke tahun.‎",
+    "description": "<p><b>Konstruksi pinus dan MDF padat‎</b><br><b>Meja ini memiliki tulisan yang cukup luas dan permukaan kerja dengan 2 laci penyimpanan. ‎</b><br><b>‎Pengembalian gratis selama 30 hari.‎</b><br><b>Dimensi : <br>47''W x 20''D x 30''H</b></p>",
+    "stocks":60,
+    "category": "Meja",
+    "reviews": [
+      {
+        "nama": "Arby",
+        "text": "Meja ini sangat kokoh"
       }
     ]
   }
