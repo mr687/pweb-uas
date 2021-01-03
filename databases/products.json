@@ -56,7 +56,7 @@
   {
     "id": 4,
     "name": "HUIMO Armchair",
-    "price": 250000,
+    "price": 800000,
     "picture": "./assets/products/HUIMO_Armchair.jpg",
     "views": 70,
     "sales": 17,
@@ -74,7 +74,7 @@
   {
     "id": 5,
     "name": "Modway Linnea Bed",
-    "price": 500000,
+    "price": 3000000,
     "picture": "./assets/products/Modway_Linnea_bed.jpg",
     "views": 5,
     "sales": 67,
@@ -92,7 +92,7 @@
   {
     "id": 6,
     "name": "Modway Della Vinyl Bed",
-    "price": 235000,
+    "price": 2350000,
     "picture": "./assets/products/Modway_Della_Vinyl_Bed.jpg",
     "views": 20,
     "sales": 7,
@@ -110,7 +110,7 @@
   {
     "id": 7,
     "name": "Hillsdale Furniture Lawler Bed",
-    "price": 310000,
+    "price": 3100000,
     "picture": "./assets/products/Hillsdale_Furniture_Lawler_Bed.jpg",
     "views": 60,
     "sales": 3,
@@ -128,7 +128,7 @@
   {
     "id": 8,
     "name": "Ravenna Home Springdale Table",
-    "price": 310000,
+    "price": 900000,
     "picture": "./assets/products/Ravenna_Home_Springdale.jpg",
     "views": 123,
     "sales": 50,
@@ -140,6 +140,60 @@
       {
         "nama": "Arby",
         "text": "Meja ini sangat kokoh"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Folding Table ErgoDesign",
+    "price": 1200000,
+    "picture": "./assets/products/Folding_Table_ErgoDesign.jpg",
+    "views": 233,
+    "sales": 70,
+    "sort_desc": "Ukuran meja lipat adalah 31,5 x 17,83 x 29,13, dan setelah dilipat, lebarnya kurang dari 3,6 inci, membuat transportasi dan penyimpanan mudah saat tidak digunakan. Kapasitas berat (pon): 350‎‎",
+    "description": "‎<p><b>Mudah Dibawa</b><br>Ringan 14,99 pound, meja komputer dapat dilipat dengan cepat dengan Kunci aman menjaga meja tertutup saat mengangkut‎<br><b>Dimensi : </b><br>‎31,5 x 17,83 x 29,19 inci‎</p>",
+    "stocks":22,
+    "category": "Meja",
+    "reviews": [
+      {
+        "nama": "Ilham",
+        "text": "Meja ini sangat mudah dibawa"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "FURINNO Simplistic Study Table",
+    "price": 500000,
+    "picture": "./assets/products/FURINNO_Simplistic_Study_Table.jpg",
+    "views": 300,
+    "sales": 80,
+    "sort_desc": "‎Desain bergaya sederhana, Fungsional dan cocok untuk ruangan mana pun‎",
+    "description": "‎<p><b>Material :</b><br>‎Kayu komposit berkualitas premium‎<br><b>Dimensi :</b><br>‎31. 5 (W) x 29. 8 (H) x 15. 5 (D) Inci‎</p>",
+    "stocks":122,
+    "category": "Meja",
+    "reviews": [
+      {
+        "nama": "Ilyas",
+        "text": "Cocok digunakan untuk belajar"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "SHW L-Shaped Home Desk",
+    "price": 500000,
+    "picture": "./assets/products/SHW_L-Shaped_Home_Desk.jpg",
+    "views": 200,
+    "sales": 60,
+    "sort_desc": "‎Meja komputer sudut berbentuk L menghemat ruang di kantor rumah, kamar asrama‎",
+    "description": "<p><b>Material : </b><br>‎Meja komputer sudut berbentuk L menghemat ruang di kantor rumah, kamar asrama‎<br><b>Dimensi :</b><br> ‎51 x 19,7 x 28,3‎</p>‎",
+    "stocks":102,
+    "category": "Meja",
+    "reviews": [
+      {
+        "nama": "Rasyid",
+        "text": "Cocok untuk meja di pojok ruangan"
       }
     ]
   }
