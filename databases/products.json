@@ -1,34 +1,92 @@
 [
   {
     "id": 1,
-    "name": "Arctander Chair543566",
-    "price": 500000,
+    "name": "Arctander Chair",
+    "price": 820000,
     "picture": "./assets/products/chair_trending.jpg",
+    "sort_desc": "Sebagian besar dari kita akrab dengan desain ikonik kursi berbentuk telur yang mengambang di udara. Hanging Egg Chair adalah desain yang diakui secara kritis yang telah menikmati pujian di seluruh dunia sejak bentuk patung yang khas dibuat.‎",
+    "description":"<p>‎Sebagian besar dari kita akrab dengan desain ikonik kursi berbentuk telur yang mengambang di udara. Hanging Egg Chair adalah desain yang diakui secara kritis yang telah menikmati pujian di seluruh dunia sejak bentuk patung yang khas diciptakan oleh Nanna & Jørgen Ditzel pada tahun 1959.‎ <br>‎Desain Kursi Telur Gantung telah lama dijuluki abadi sedangkan rotan material memiliki masa keemasannya pada tahun 1960-an ketika pembuat dan arsitek yang terampil membuat furnitur yang di patung indah dari bahan yang menantang. Namun, saat ini rotan menjadi semakin populer bersamaan dengan permintaan konsumen untuk produk berkelanjutan.‎</p><p><b>Dimensi :</b><br>85x75x125</p><p><b>Bahan :</b><br>Serat alami (rotan) Kursi luar ruangan: serat sintetis Berdiri: besi dilapisi bubuk (hanya untuk penggunaan dalam ruangan)‎</p>",
+    "stocks":15,
     "views": 100,
-    "sales": 0
+    "category": "Kursi",
+    "sales": 0,
+    "reviews": [
+      {
+        "nama": "Jono",
+        "text": "Sangat nyaman"
+      }
+    ]
   },
   {
     "id": 2,
-    "name": "Arctander Chair 2345",
-    "price": 500000,
-    "picture": "./assets/products/chair_trending.jpg",
+    "name": "Clarice Tall Wingback",
+    "price": 2200000,
+    "picture": "./assets/products/Clarice_Tall_Wingback.jpg",
     "views": 70,
-    "sales": 3
+    "sales": 3,
+    "sort_desc": "‎Clarice Tall Wingback Fabric Accent Chair kami dalam krem ringan akan memenuhi semua kebutuhan furnitur dalam ruangan Anda. Kursi santai kelas tinggi ini berpasangan sempurna dengan ottoman dan hadir dalam berbagai warna yang sesuai dengan gaya apa pun.‎",
+    "description": "<p><b>CLASSIC ARMLESS STYLE:</b>Di Great Deal Furniture, kami membawa Anda furnitur terbaik yang tersedia. Kursi bergaya kami memiliki fitur sayap abadi di punggungnya yang tinggi. Desainnya yang melengkung adalah titik fokus yang sempurna untuk setiap kamar, dan membuat lokasi yang bagus untuk duduk, membaca, dan bersantai.‎<br><b>Dimensi : </b>27x35x38 inchi</p>",
+    "stocks":15,
+    "category": "Kursi",
+    "reviews": [
+      {
+        "nama": "Jojo",
+        "text": "WORTH IT!!!"
+      }
+    ]
   },
   {
     "id": 3,
-    "name": "Arctander Chair 234",
-    "price": 500000,
-    "picture": "./assets/products/chair_trending.jpg",
+    "name": "Fabric Armchair",
+    "price": 1700000,
+    "picture": "./assets/products/Fabric_Armchair.jpg",
     "views": 50,
-    "sales": 5
+    "sales": 5,
+    "sort_desc": "‎Bantal kursi tebal dengan kapas peregangan di dalamnya mengurangi tekanan pada pinggul secara efektif sementara bantal backrest yang tegas dan bantal tambahan memberikan dukungan yang cukup ke punggung Anda. Permukaan kain linen yang lembut dan bernapas ramah terhadap kulit Anda.‎",
+    "description": "<P><b>Modern & Simple Style :</b>‎Kursi aksen dirancang dengan gaya minimalis. Bingkai kayunya yang kokoh diberi hasil akhir yang halus setelah beberapa semprotan cat. Beberapa warna untuk dipilih, dapat berbaur menjadi dekorasi ruang tamu, kamar tidur, balkon Anda‎.<br><b>Dimensi :</b><br>26x31x28 inchi</P>",
+    "stocks":15,
+    "category": "Kursi",
+    "reviews": [
+      {
+        "nama": "Bayu",
+        "text": "Sangat Recommended"
+      }
+    ]
   },
   {
     "id": 4,
-    "name": "Arctander Chair 546457568",
+    "name": "HUIMO Armchair",
     "price": 500000,
-    "picture": "./assets/products/chair_trending.jpg",
+    "picture": "./assets/products/HUIMO_Armchair.jpg",
     "views": 5,
-    "sales": 67
+    "sales": 67,
+    "sort_desc": "Our accent chairs are very comfortable with the humanized design of the curved backrest and with large enough cushion",
+    "description": "<p><b>SOLID WOOD & DURABLE :</b><br>‎Sandaran tangan dan bingkai terbuat dari kayu padat, tidak ada bau aneh, tidak ada perbedaan warna, dan kursi baca sangat kokoh yang dapat menampung hingga 300 pon (kapasitas beban statis). Kain bantal tidak mudah untuk pil, keriput atau cacat, terlihat baru bahkan setelah penggunaan jangka panjang.‎<br><b>Dimensi : </b><br>31x21x59 inchi</b></p>",
+    "stocks":15,
+    "category": "Kursi",
+    "reviews": [
+      {
+        "nama": "Sule",
+        "text": "Desainnya sangat unik!"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "HUIMO Armchair",
+    "price": 500000,
+    "picture": "./assets/products/HUIMO_Armchair.jpg",
+    "views": 5,
+    "sales": 67,
+    "sort_desc": "Our accent chairs are very comfortable with the humanized design of the curved backrest and with large enough cushion",
+    "description": "<p><b>SOLID WOOD & DURABLE :</b><br>‎Sandaran tangan dan bingkai terbuat dari kayu padat, tidak ada bau aneh, tidak ada perbedaan warna, dan kursi baca sangat kokoh yang dapat menampung hingga 300 pon (kapasitas beban statis). Kain bantal tidak mudah untuk pil, keriput atau cacat, terlihat baru bahkan setelah penggunaan jangka panjang.‎<br><b>Dimensi : </b><br>31x21x59 inchi</b></p>",
+    "stocks":15,
+    "category": "Kursi",
+    "reviews": [
+      {
+        "nama": "Sule",
+        "text": "Desainnya sangat unik!"
+      }
+    ]
   }
 ]

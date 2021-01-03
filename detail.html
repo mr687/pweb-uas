@@ -44,7 +44,9 @@
                   </li>
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
-                  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+                  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div id="product_full_desc"></div>
+                  </div>
                   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
                   <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
                 </div>                
@@ -74,9 +76,10 @@
     var productId = new URLSearchParams(window.location.search).get('product_id');
     findProduct(productId=productId, (product) => {
       document.getElementById('productName').innerHTML = product.name;
-      document.getElementById('productDescription').innerHTML = product.name;
+      document.getElementById('productDescription').innerHTML = product.sort_desc;
       document.getElementById('productPrice').innerHTML = money(product.price);
       document.getElementById('productPicture').setAttribute('src', product.picture);
+      document.getElementById('product_full_desc').innerHTML = product.description;
     });
 
     var relatedProducts = document.querySelector('.related-products .content');
