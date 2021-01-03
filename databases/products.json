@@ -187,7 +187,7 @@
     "views": 700,
     "sales": 300,
     "sort_desc": "‎Meja komputer kantor ini dilengkapi dengan instruksi terperinci dan diilustrasikan dan suku cadang bernomor; semua alat kelengkapan dan alat yang diperlukan untuk perakitan disertakan untuk perakitan bebas kekhawatiran.‎",
-    "description": "<p><b>Sturdy Structure : </b><br>‎Dibangun oleh baja premium dan chipboard, benar-benar padat, stabil, kokoh dan tahan lama; dan bantalan kaki yang dapat disesuaikan memberikan stabilitas yang lebih besar, memastikan Anda menikmati pekerjaan Anda di meja ini.<br><b>Dimensi : </b>‎47 x 15.8 x 29.6</p>",
+    "description": "<p><b>Sturdy Structure : </b><br>‎Dibangun oleh baja premium dan chipboard, benar-benar padat, stabil, kokoh dan tahan lama; dan bantalan kaki yang dapat disesuaikan memberikan stabilitas yang lebih besar, memastikan Anda menikmati pekerjaan Anda di meja ini.<br><b>Dimensi : </b><br>‎47 x 15.8 x 29.6</p>",
     "stocks": 300,
     "category": "Meja",
     "reviews": [
@@ -205,7 +205,7 @@
     "views": 300,
     "sales": 100,
     "sort_desc": "‎‎Kursi game bergaya mobil balap yang memberikan kemewahan dan kenyamanan, baik itu digunakan untuk sesi permainan yang intens dan naik ke puncak papan peringkat, atau hari kerja yang panjang‎‎",
-    "description": "<p><b>Ergonomic Confort : </b><br>‎ Dengan empuk tersegmentasi yang dirancang untuk memberikan dukungan yang sangat berkontur ketika dan di mana Anda paling membutuhkannya, kursi ergonomis ini juga dilengkapi dengan pijakan kaki yang dapat diperpanjang untuk penguatan posisi Headrest adjustable dan bantal pendukung lumbar, serta sandaran tangan empuk memberikan kenyamanan di sekitar kenyamanan‎‎<br><b>Dimensi : </b>‎28,5 x 28 x 51,5 inci‎</p>",
+    "description": "<p><b>Ergonomic Confort : </b><br>‎ Dengan empuk tersegmentasi yang dirancang untuk memberikan dukungan yang sangat berkontur ketika dan di mana Anda paling membutuhkannya, kursi ergonomis ini juga dilengkapi dengan pijakan kaki yang dapat diperpanjang untuk penguatan posisi Headrest adjustable dan bantal pendukung lumbar, serta sandaran tangan empuk memberikan kenyamanan di sekitar kenyamanan‎‎<br><b>Dimensi : </b><br>‎28,5 x 28 x 51,5 inci‎</p>",
     "stocks": 27,
     "category": "Kursi",
     "reviews": [
@@ -223,7 +223,7 @@
     "views": 600,
     "sales": 500,
     "sort_desc": "‎Comfortable office chair upholstered in black bonded leather‎",
-    "description": "<p><b>‎Kursi empuk dan punggung untuk kenyamanan sepanjang hari‎<br><b>‎Penyesuaian tinggi kursi pneumatik; caster roda ganda‎</b><br><b>Dimensi : </b>‎25.75 x 24.25 x 42.25 inci</p>",
+    "description": "<p><b>‎Kursi empuk dan punggung untuk kenyamanan sepanjang hari‎<br><b>‎Penyesuaian tinggi kursi pneumatik; caster roda ganda‎</b><br><b>Dimensi : </b>‎<br>25.75 x 24.25 x 42.25 inci</p>",
     "stocks": 259,
     "category": "Kursi",
     "reviews": [
@@ -232,5 +232,60 @@
         "text": "Nyaman dan Elegan"
       }
     ]
+  },
+  {
+    "id": 14,
+    "name": "Steelcase Leap Office Chair",
+    "price": 10000000,
+    "picture": "./assets/products/Steelcase_Leap_Office_Chair.jpg",
+    "views": 500,
+    "sales": 200,
+    "sort_desc": "‎‎Kursi kantor terlaris dan ergonomis yang menampilkan teknologi yang dipatenkan di kursi dan kembali terbukti meningkatkan produktivitas‎‎",
+    "description": "<p><b>Material : </b>‎<br>Materials contain no PVCs, CFCs, solvents, chrome, benzene, lead or mercury. Upholstery is made from 50% post-consumer PET and is 100% recyclable.<br><b>Dimensi : </b><br>24 x 27 x 43 inches</p>",
+    "stocks": 35,
+    "category": "Kursi",
+    "reviews": [
+      {
+        "nama": "Kentang",
+        "text": "Mahal tapi nyaman"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Rollaway Guest Folding Bed",
+    "price": 890000,
+    "picture": "./assets/products/Rollaway_Guest_Folding_Bed.jpg",
+    "views": 200,
+    "sales": 80,
+    "sort_desc": "‎Tampung tamu Anda, minta teman-teman anak Anda untuk tidur, atau buat pengaturan cepat bahkan di kantor untuk menangkap tunda siang Anda dengan tempat tidur lipat portabel GOLD STAR untuk memberi diri Anda PENGALAMAN KENYAMANAN ULTIMATE - tempat tidur lipat serbaguna TERBAIK.‎",
+    "description": "<p><b>SUPERIOR BUILD : </b‎><br>‎Dengan tabung baja berkualitas premium, bala bantuan ganda, dan menstabilkan kaki, tempat tidur lipat baja kokoh menjaga keseimbangan tanpa khawatir tempat tidur lipat menggulingkan. Kasur lipat memiliki kain Oxford 600 D untuk dukungan ekstra, suspensi dan elastisitas yang jauh lebih baik daripada dukungan kayu.‎<br><b>Dimensi : </b><br>31x75x14 inches</p>",
+    "stocks": 56,
+    "category": "Kasur",
+    "reviews": [
+      {
+        "nama": "Lele",
+        "text": "Sangat mudah dibawa!"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Tall Headboard Platform Bed ",
+    "price": 890000,
+    "picture": "./assets/products/Tall_Headboard_Platform_Bed.jpg",
+    "views": 1000,
+    "sales": 531,
+    "sort_desc": "‎Tampung tamu Anda, minta teman-teman anak Anda untuk tidur, atau buat pengaturan cepat bahkan di kantor untuk menangkap tunda siang Anda dengan tempat tidur lipat portabel GOLD STAR untuk memberi diri Anda PENGALAMAN KENYAMANAN ULTIMATE - tempat tidur lipat serbaguna TERBAIK.‎",
+    "description": "<p><b>SUPERIOR BUILD : </b‎><br>‎TEMPAT TIDUR PLATFORM Linen DENGAN BILAH‎<br><b>Dimensi : </b><br>89 x 85 x 51 inches</p>",
+    "stocks": 57,
+    "category": "Kasur",
+    "reviews": [
+      {
+        "nama": "Budi",
+        "text": "Nikmat Sekali"
+      }
+    ]
   }
+
 ]
