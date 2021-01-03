@@ -272,7 +272,7 @@
   {
     "id": 16,
     "name": "Tall Headboard Platform Bed ",
-    "price": 890000,
+    "price": 750000,
     "picture": "./assets/products/Tall_Headboard_Platform_Bed.jpg",
     "views": 1000,
     "sales": 531,
@@ -284,6 +284,42 @@
       {
         "nama": "Budi",
         "text": "Nikmat Sekali"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "OneSpace Stanton Computer Desk",
+    "price": 1200000,
+    "picture": "./assets/products/OneSpace_Stanton_Computer_Desk.jpg",
+    "views": 800,
+    "sales": 245,
+    "sort_desc": "‎‎JANGAN berdiri di atas meja. Jangan gunakan meja sebagai stepladder. JANGAN menggunakan meja kecuali semua baut dan sekrup diamankan dengan kuat. Setiap 6 bulan, periksa semua baut dan sekrup untuk memastikan mereka ketat. Produk ini adalah California 93120 Compliant for Formaldehyde.‎",
+    "description": "<p><b>Sleek and elegant design</b‎><br>‎‎<b>Pull-out Keyboard shelf</b><br><b>Dimensi : </b><br>89 x 85 x 51 inches</p>",
+    "stocks": 24,
+    "category": "Meja",
+    "reviews": [
+      {
+        "nama": "Badu",
+        "text": "Saya sangat puas!"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Flash Glass Computer Desk",
+    "price": 900000,
+    "picture": "./assets/products/Flash_Glass_Computer_Desk.jpg",
+    "views": 945,
+    "sales": 445,
+    "sort_desc": "‎‎‎Ubah ruang kantor Anda dengan stasiun kerja komputer kaca ini. Bingkai akan menambahkan penampilan bergaya ke kamar Anda. Meja yang tampak apik akan menambah gaya ke kamar kantor, kamar tidur, atau asrama Anda.‎",
+    "description": "<p><b>‎Desain hemat ruang dengan atasan kaca tempered hitam yang kuat‎</b‎><br>‎‎<b>‎Kaki crisscross ceri bergaya dengan lantai meluncur‎</b><br><b>Dimensi : </b><br>39.25 x 23.5 x 29 inci</p>",
+    "stocks": 40,
+    "category": "Meja",
+    "reviews": [
+      {
+        "nama": "Bade",
+        "text": "Sanagat Mewah"
       }
     ]
   }
