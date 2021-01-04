@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
   <link rel="stylesheet" href="assets/vendor/icofont/icofont.min.css">
   <link rel="stylesheet" href="assets/css/app.css?v=56">
 </head>
+
 <body>
   <div id="app">
     <header id="header"></header>
@@ -30,15 +32,52 @@
       <section class="products py-5">
         <div class="container">
           <div class="row">
-            <div class="col-md-3 d-none d-md-block">lorem</div>
+            <div class="col-md-3 d-none d-md-block">
+              <p class="py-1 h5"><b>All Categories</b></p>
+              <div class="categories--content">
+
+              </div>
+              <div class="py-5"></div>
+              <p class="py-1 h5"><b>Price</b></p>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioPriceDefault" id="flexRadioPrice1" checked>
+                <label class="form-check-label" for="flexRadioPrice1">
+                  None
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioPriceDefault" id="flexRadioPrice1">
+                <label class="form-check-label" for="flexRadioPrice1">
+                  $0 - $50
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioPriceDefault" id="flexRadioPrice2">
+                <label class="form-check-label" for="flexRadioPrice2">
+                  $150 - $200
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioPriceDefault" id="flexRadioPrice3">
+                <label class="form-check-label" for="flexRadioPrice3">
+                  $200 - $250
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioPriceDefault" id="flexRadioPrice4">
+                <label class="form-check-label" for="flexRadioPrice4">
+                  $50 - $100
+                </label>
+              </div>
+            </div>
             <div class="col-md-9">
-              <div class="products--content row"></div>
+              <div class="products--content row pt-5"></div>
             </div>
           </div>
         </div>
       </section>
     </main>
-  
+
     <footer id="footer"></footer>
   </div>
 
@@ -46,16 +85,36 @@
   <script src="assets/js/app.js"></script>
   <script>
     var productsContent = document.querySelector('.products .products--content');
+    var categoriesContent = document.querySelector('.categories--content');
+
+    getCategories(
+      (products) => {
+        categoriesContent.innerHTML += categoryProduct("None", true, () => { window.location("./collections.html") });
+        products.forEach(product => {
+          categoriesContent.innerHTML += categoryProduct(product, false, () => { window.location("./collections.html?category=" + product) });
+
+        });
+      }
+    )
 
     getProducts(
-      orderBy='id',
-      orderByDirection='asc',
-      limit=0,
+      orderBy = 'id',
+      orderByDirection = 'asc',
+      limit = 0,
       (products) => {
         products.forEach(product => {
-          productsContent.innerHTML += cardProduct(product);
+          var query = new URLSearchParams(window.location.search).get('category');
+          if (query == "None") {
+            productsContent.innerHTML += cardProduct(product);
+          }
+          if (product.category == query) {
+            productsContent.innerHTML += cardProduct(product);
+          }
+
         });
       });
+
   </script>
 </body>
+
 </html>
