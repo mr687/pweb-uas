@@ -25,6 +25,20 @@
     </div>
   </div>
   <div id="app">
+    <div class="filter position-fixed closeFilter">
+      <div class="action">
+        <p class="py-1 h5"><b>Product Categories</b></p>
+        <div class="categories--content"></div>
+        <hr>
+        <div class="py-2"></div>
+        <p class="py-1 h5"><b>Price</b></p>
+        <div class="price--content"></div>
+        <hr>
+        <div class="py-2"></div>
+        <p class="py-1 h5"><b>Best Sellers</b></p>
+        <div class="best-sellers--content"></div>
+      </div>
+    </div>
     <header id="header"></header>
 
     <main id="main">
@@ -45,7 +59,7 @@
       <section class="products py-5">
         <div class="container">
           <div class="row">
-            <div class="col-md-3 d-none d-md-block">
+            <div class="col-md-5 col-lg-4 col-xl-3 d-none d-md-block">
               <p class="py-1 h5"><b>Product Categories</b></p>
               <div class="categories--content"></div>
               <hr>
@@ -57,8 +71,9 @@
               <p class="py-1 h5"><b>Best Sellers</b></p>
               <div class="best-sellers--content"></div>
             </div>
-            <div class="col-md-9">
-              <div class="products--content row pt-5"></div>
+            <div class="col-md-7 col-lg-8 col-xl-9">
+              <a href="javascript:void(0);" class="text-primary openFilter d-block d-md-none" style="font-size: 18px;"><i class="icofont-settings pt-5"></i> Filter</a>
+              <div class="products--content row pt-3"></div>
             </div>
           </div>
         </div>
@@ -75,9 +90,9 @@
   <script src="https://kit.fontawesome.com/b20913e551.js" crossorigin="anonymous"></script>
   <script>
     var productsContent = document.querySelector('.products .products--content');
-    var categoriesContent = document.querySelector('.categories--content');
-    var bestSellerContent = document.querySelector('.best-sellers--content');
-    var priceContent = document.querySelector('.price--content');
+    var categoriesContents = document.querySelectorAll('.categories--content');
+    var bestSellerContents = document.querySelectorAll('.best-sellers--content');
+    var priceContents = document.querySelectorAll('.price--content');
 
     var priceQuery = new URLSearchParams(window.location.search).get('price');
 
@@ -85,7 +100,9 @@
       (products) => {
         console.log(products);
         products.forEach(product => {
-          categoriesContent.innerHTML += categoryFilterRadio(product);
+          categoriesContents.forEach(element => {
+            element.innerHTML += categoryFilterRadio(product);
+          });
         });
       }
     )
@@ -128,7 +145,9 @@
       "> Rp. 5.000.000"
     ];
     priceRange.forEach((price, index) => {
-      priceContent.innerHTML += priceRangeFilterRadio(price, index);
+      priceContents.forEach(element => {
+        element.innerHTML += priceRangeFilterRadio(price, index);
+      });
     });
 
 
@@ -140,7 +159,9 @@
       (products) => {
         products.length = 5;
         products.forEach(product => {
-          bestSellerContent.innerHTML += liteCardProduct(product);
+          bestSellerContents.forEach(element=> {
+            element.innerHTML += liteCardProduct(product);
+          });
         });
       });
   </script>

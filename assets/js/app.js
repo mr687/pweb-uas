@@ -52,7 +52,7 @@ var cartProduct = (product, cart) => {
 };
 
 var cardProduct = (product) => {
-  return '<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 product">' +
+  return '<div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-3 product">' +
     '<div class="card">' +
     '<a href="./detail.html?product_id=' + product.id + '" class="product-img"><img src="' + product.picture + '" class="card-img-top"></a>' +
     '<div class="card-body">' +
@@ -221,6 +221,22 @@ $(document).ready(function () {
     if (!sidebar.hasClass('active'))
     {
       sidebar.addClass('active');
+    }
+  });
+
+  $('.openFilter').on('click', function() {
+    var filter = $('.filter');
+    if (!filter.hasClass('active'))
+    {
+      filter.addClass('active');
+    }
+  });
+
+  $('.closeFilter').on('click', function() {
+    var filter = $('.filter');
+    if (filter.hasClass('active'))
+    {
+      filter.removeClass('active');
     }
   });
 
