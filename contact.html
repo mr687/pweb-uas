@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dreamroom | Dream collections</title>
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/icofont/icofont.min.css">
+  <link rel="stylesheet" href="assets/css/app.css?v=544426">
+
+</head>
+
+<body>
+  <div id="app">
+    <header id="header"></header>
+
+    <main id="main">
+      <section class="map">
+        <div style="overflow:hidden;resize:none;max-width:100%;width:100%;height:400px;">
+          <div id="googlemaps-display" style="height:100%; width:100%;max-width:100%;"><iframe
+              style="height:100%;width:100%;border:0;" frameborder="0"
+              src="https://www.google.com/maps/embed/v1/place?q=universitas+dian+nuswantoro&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+          </div><a class="embedded-maphtml" rel="nofollow" href="https://www.embed-map.com"
+            id="authorizemaps-data">https://www.embed-map.com</a>
+          <style>
+            #googlemaps-display img.text-marker {
+              max-width: none !important;
+              background: none !important;
+            }
+
+            img {
+              max-width: none
+            }
+          </style>
+        </div>
+      </section>
+
+      <section class="contact py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 div col-md-5">
+              <h4 class="text-uppercase"><strong>Contact Us</strong></h4>
+              <p class="text-muted my-4">Please fill out the quick form and we will be in touch with lightening speed.
+              </p>
+              <div><b>Address:</b> Jl. Gajah Mada No.8, Semarang, ID</div>
+              <div><b>Phone:</b> (+62) 823 2544 1718</div>
+              <div><b>Email:</b> support@dreamroom.com</div>
+              <div><b>Open:</b> 8am - 8pm, Mon - Sat</div>
+            </div>
+            <div class="col-12 div col-md-7">
+              <form action="" id="contactUsForm">
+                <div class="form-group mb-3">
+                  <input type="text" class="form-control form-control-lg" name="name" required="" placeholder="Name">
+                </div>
+                <div class="form-group mb-3">
+                  <input type="text" class="form-control form-control-lg" name="subject" required=""
+                    placeholder="Subject">
+                </div>
+                <div class="form-group mb-3">
+                  <input type="text" class="form-control form-control-lg" name="email" required="" placeholder="Email">
+                </div>
+                <div class="form-group mb-3">
+                  <textarea name="body" required="" placeholder="Message"
+                    class="form-control form-control-lg"></textarea>
+                </div>
+                <div class="form-group mb-3">
+                  <button type="submit" class="btn btn-light border btn-lg" style="width: 100%;">Send Message</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+  </div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    $(document).ready(function () {
+      var form = $('#contactUsForm');
+
+      form.on('submit', function (e) {
+        e.preventDefault();
+
+        var name = $('input[name=name]');
+        var subject = $('input[name=subject]');
+        var email = $('input[name=email]');
+        var message = $('textarea[name=body]');
+        var body = 'Name: ' + name.val() + '%0D%0A' +
+          'Email: ' + email.val() + '%0D%0A' +
+          'Message: %0D%0A %0D%0A' + message.val();
+
+        name.val(' ');
+        subject.val(' ');
+        email.val(' ');
+        message.val(' ');
+        window.location = 'mailto:support@dreamroom.com?subject=' + subject.val() + '&body=' + body + '';
+      });
+    });
+  </script>
+</body>
+
+</html>

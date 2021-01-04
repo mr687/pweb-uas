@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dreamroom | Dream collections</title>
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/vendor/icofont/icofont.min.css">
-  <link rel="stylesheet" href="assets/css/app.css?v=32">
+  <link rel="stylesheet" href="assets/css/app.css?v=332">
 </head>
+
 <body>
   <div id="app">
     <header id="header"></header>
@@ -18,7 +20,7 @@
           <div class="row">
             <div class="col-12 col-md-5">
               <div class="img-preview">
-                <img src="" id="productPicture">
+                <img src="" id="productPicture" style="width: 100%;">
               </div>
             </div>
             <div class="col-12 col-md-7 ps-5">
@@ -28,28 +30,36 @@
                 <h4 id="productPrice" class="text-primary mt-4">Rp 0</h4>
               </div>
               <div class="actions mt-4">
-                <a href="" class="btn btn-lg btn-dark"><i class="icofont-cart-alt"></i> Add To Cart</a>
+                <a href="javascript:void(0);" class="btn btn-lg btn-dark" id="addToCart"><i
+                    class="icofont-cart-alt"></i> Add To
+                  Cart</a>
                 <a href="" class="btn btn-lg btn-dark ms-2">Buy Now</a>
               </div>
               <div class="product-detail mt-5">
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                   <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Details</a>
+                    <a class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" href="#pills-home" role="tab"
+                      aria-controls="pills-home" aria-selected="true">Details</a>
                   </li>
                   <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Shipping & Return</a>
+                    <a class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" href="#pills-profile" role="tab"
+                      aria-controls="pills-profile" aria-selected="false">Shipping & Return</a>
                   </li>
                   <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Reviews</a>
+                    <a class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" href="#pills-contact" role="tab"
+                      aria-controls="pills-contact" aria-selected="false">Reviews</a>
                   </li>
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
-                  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                  <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                    aria-labelledby="pills-home-tab">
                     <div id="product_full_desc"></div>
                   </div>
-                  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
-                  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
-                </div>                
+                  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...
+                  </div>
+                  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -66,15 +76,17 @@
         </div>
       </section>
     </main>
-  
+
     <footer id="footer"></footer>
   </div>
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js"></script>
   <script src="assets/js/app.js"></script>
   <script>
     var productId = new URLSearchParams(window.location.search).get('product_id');
-    findProduct(productId=productId, (product) => {
+    findProduct(productId = productId, (product) => {
       document.getElementById('productName').innerHTML = product.name;
       document.getElementById('productDescription').innerHTML = product.sort_desc;
       document.getElementById('productPrice').innerHTML = money(product.price);
@@ -82,16 +94,54 @@
       document.getElementById('product_full_desc').innerHTML = product.description;
     });
 
+    var addToCart = document.getElementById('addToCart');
+    addToCart.addEventListener('click', function () {
+      var items = [];
+      if (cookie.get('dreamroom.cart.items')) {
+        items = JSON.parse(cookie.get('dreamroom.cart.items'));
+      }
+      findProduct(productId = productId, (product) => {
+        if (product) {
+          if (items.length > 0) {
+            if (items.find(a => a.id == product.id)) {
+              items.forEach(e => {
+                if (e.id == product.id) {
+                  e.qty += 1;
+                }
+              });
+            } else {
+              items.push({
+                id: product.id,
+                price: product.price,
+                qty: 1
+              });
+            }
+          } else {
+            items.push({
+              id: product.id,
+              price: product.price,
+              qty: 1
+            });
+          }
+          cookie.set('dreamroom.cart.items', JSON.stringify(items));
+          window.location = '';
+        }
+      });
+    });
+
     var relatedProducts = document.querySelector('.related-products .content');
     getProducts(
-      orderBy='id',
-      orderByDirection='asc',
-      limit=0,
+      orderBy = 'id',
+      orderByDirection = 'asc',
+      limit = 0,
       (products) => {
-        products.forEach(product => {
-          relatedProducts.innerHTML += cardProduct(product);
+        findProduct(productId, (product) => {
+          products.filter(a => (a.category == product.category) && (a.id != product.id)).forEach(product => {
+            relatedProducts.innerHTML += cardProduct(product);
+          });
         });
       });
   </script>
 </body>
+
 </html>

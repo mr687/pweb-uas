@@ -1,49 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dreamroom | Dream collections</title>
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/vendor/icofont/icofont.min.css">
-  <link rel="stylesheet" href="assets/css/app.css?v=536">
+  <link rel="stylesheet" href="assets/css/app.css?v=5376">
 </head>
+
 <body>
   <div id="app">
     <header id="header"></header>
 
     <main id="main">
-      <div class="container py-5">
-        <div><h4>Shopping Cart</h4></div>
+      <div class="container text-center py-5 is-empty">
+        <p>Your cart is currently empty.</p>
+        <a href="collections.html?category=None&price=None" class="btn btn-dark btn-lg mt-4">Shopping Now</a>
+      </div>
+      <div class="container py-5 is-exists d-none">
+        <div>
+          <h4>Shopping Cart</h4>
+        </div>
         <div class="row table-head mt-5 py-3 border-bottom">
           <div class="col-3 col-sm-2">IMAGE</div>
           <div class="col-9 col-sm-8">PRODUCT</div>
           <div class="col-12 col-sm-2 d-none d-sm-inline-block text-end">TOTAL</div>
         </div>
-        <div class="row table-item border-bottom py-3">
-          <div class="col-3 col-sm-2">
-            <img src="./assets/products/botol_trending.jpg" alt="">
-          </div>
-          <div class="col-9 col-sm-8">PRODUCT</div>
-          <div class="col-12 col-sm-2 d-none d-sm-inline-block text-end">TOTAL</div>
-        </div>
-        <div class="row table-item border-bottom py-3">
-          <div class="col-3 col-sm-2">
-            <img src="./assets/products/botol_trending.jpg" alt="">
-          </div>
-          <div class="col-9 col-sm-8">PRODUCT</div>
-          <div class="col-12 col-sm-2 d-none d-sm-inline-block text-end">TOTAL</div>
-        </div>
+        <div id="cart-items"></div>
         <div class="row table-foot py-3 border">
-          <div class="col text-end">1</div>
+          <div class="col text-end">
+            <span class="h6">Subtotal:</span>
+            <span class="h4 text-primary ms-3" id="cartSubTotal">Rp 0</span>
+            <p>Shipping, taxes, and discounts will be calculated at checkout.</p>
+            <a href="checkout.html" class="btn btn-lg btn-primary">Checkout</a>
+          </div>
         </div>
       </div>
     </main>
-  
+
     <footer id="footer"></footer>
   </div>
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js"></script>
   <script src="assets/js/app.js"></script>
+  <script>
+    var dataCarts = JSON.parse(cookie.get('dreamroom.cart.items'));
+    var cartSubTotal = 0;
+    dataCarts.forEach(cart => {
+      var cartItems = document.getElementById('cart-items');
+      findProduct(cart.id, (product) => {
+        document.getElementById('cart-items').innerHTML += cartProduct(product, cart);
+      });
+      cartSubTotal += (cart.price * cart.qty)
+    });
+    document.getElementById('cartSubTotal').innerHTML = money(cartSubTotal);
+
+    var minProduct = (id) => {
+      element = dataCarts.find(a => a.id == id);
+      if (element.qty < 2) {
+        dataCarts = dataCarts.filter(a => a.id != id);
+      } else {
+        dataCarts.forEach(element => {
+          if (element.id == id) {
+            element.qty -= 1;
+          }
+        });
+      }
+      cookie.set('dreamroom.cart.items', JSON.stringify(dataCarts));
+      window.location = '';
+    };
+    var plusProduct = (id) => {
+      dataCarts.forEach(element => {
+        if (element.id == id) {
+          element.qty += 1;
+        }
+      });
+      cookie.set('dreamroom.cart.items', JSON.stringify(dataCarts));
+      window.location = '';
+    };
+
+    var removeProduct = (id) => {
+      dataCarts = dataCarts.filter(a => a.id != id);
+      cookie.set('dreamroom.cart.items', JSON.stringify(dataCarts));
+      window.location = '';
+    };
+
+    $(document).ready(function () {
+      var isEmpty = $('.is-empty');
+      var isExists = $('.is-exists');
+
+      if (dataCarts.length > 0) {
+        if (!isEmpty.hasClass('d-none')) {
+          isEmpty.addClass('d-none');
+        }
+        if (isExists.hasClass('d-none')) {
+          isExists.removeClass('d-none');
+        }
+      } else {
+        if (isEmpty.hasClass('d-none')) {
+          isEmpty.removeClass('d-none');
+        }
+        if (!isExists.hasClass('d-none')) {
+          isExists.addClass('d-none');
+        }
+      }
+    });
+  </script>
 </body>
+
 </html>

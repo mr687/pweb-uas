@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dreamroom | Dream collections</title>
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/vendor/icofont/icofont.min.css">
-  <link rel="stylesheet" href="assets/css/app.css?v=56">
-  
+  <link rel="stylesheet" href="assets/css/app.css?v=5444326">
+
 </head>
+
 <body>
+  <div id="pageload">
+    <div style="text-align: center;margin-top: 50vh;transform: translateY(-50%);">
+      <div class="spinner-grow text-primary" role="status" style="width: 4rem;height: 4rem;">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow text-primary" role="status" style="margin-left: -20px;">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow spinner-grow-sm text-primary" role="status" style="margin-left: -20px;">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
   <div id="app">
     <header id="header"></header>
 
@@ -24,17 +39,19 @@
             <div class="carousel-item active">
               <img src="assets/products/chair1.png" class="d-block w-100">
               <div class="carousel-caption container d-none d-md-block">
-                <h4>First slide label</h4>
-                <h1 class="w-50">Nulla vitae elit libero, a pharetra augue mollis interdum.</h1>
-                <a href="" class="btn btn-dark btn-lg mt-4">Shopping Now !</i></a>
+                <h4>Quick delivery, <span class="text-primary">from 25K</span></h4>
+                <h1 class="w-50">Norman Copenhagen - Craft salt and pepper grinder</h1>
+                <a href="collections.html?category=None&price=None" class="btn btn-dark btn-lg mt-4">Shopping Now
+                  !</i></a>
               </div>
             </div>
             <div class="carousel-item">
               <img src="assets/products/chair2.png" class="d-block w-100">
               <div class="carousel-caption container d-none d-md-block">
-                <h5>First slide label</h5>
-                <h1 class="w-50">Nulla vitae elit libero, a pharetra augue mollis interdum.</h1>
-                <a href="" class="btn btn-dark btn-lg mt-4">Shopping Now !</i></a>
+                <h4>Quick delivery, <span class="text-primary">from 25K</span></h4>
+                <h1 class="w-50">Wood Minimal Office Chair Extra 40% off now.</h1>
+                <a href="collections.html?category=None&price=None" class="btn btn-dark btn-lg mt-4">Shopping Now
+                  !</i></a>
               </div>
             </div>
           </div>
@@ -58,6 +75,10 @@
           <div class="row mt-5 content">
           </div>
         </div>
+      </section>
+
+      <section class="promo py-5">
+        <a href="./collections.html?category=None&price=None"><img src="./assets/img/full_width_banner.jpg" alt=""></a>
       </section>
 
       <section class="best-seller py-5">
@@ -98,15 +119,17 @@
   </div>
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js"></script>
   <script src="assets/js/app.js"></script>
   <script>
     var trendingContent = document.querySelector('.trending-product .content');
     var bestSellerContent = document.querySelector('.best-seller .content');
 
     getProducts(
-      orderBy='views',
-      orderByDirection='desc',
-      limit=4,
+      orderBy = 'views',
+      orderByDirection = 'desc',
+      limit = 4,
       (products) => {
         products.forEach(product => {
           trendingContent.innerHTML += cardProduct(product);
@@ -114,9 +137,9 @@
       });
 
     getProducts(
-      orderBy='sales',
-      orderByDirection='desc',
-      limit=4,
+      orderBy = 'sales',
+      orderByDirection = 'desc',
+      limit = 4,
       (products) => {
         products.forEach(product => {
           bestSellerContent.innerHTML += cardProduct(product);
@@ -124,4 +147,5 @@
       });
   </script>
 </body>
+
 </html>
