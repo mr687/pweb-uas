@@ -179,6 +179,13 @@ var findProduct = (productId = undefined, callback) => {
     });
 };
 
+$(document).ready(function () {
+  var pageload = $('#pageload');
+  if (!pageload.hasClass('d-none')) {
+    pageload.addClass('d-none');
+  }
+});
+
 (async () => {
   var header = document.getElementById('header');
   var footer = document.getElementById('footer');
