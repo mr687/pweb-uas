@@ -52,12 +52,12 @@ var cartProduct = (product, cart) => {
 };
 
 var cardProduct = (product) => {
-  return '<div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-3 product">' +
+  return '<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 product">' +
     '<div class="card">' +
     '<a href="./detail.html?product_id=' + product.id + '" class="product-img"><img src="' + product.picture + '" class="card-img-top"></a>' +
     '<div class="card-body">' +
-    '<a href="./detail.html?product_id=' + product.id + '"><h5 class="card-title">' + product.name + '</h5></a>' +
-    '<p class="card-text small">' + money(product.price) + '</p>' +
+    '<a href="./detail.html?product_id=' + product.id + '"><b class="card-title">' + product.name + '</b></a>' +
+    '<p class="card-text small mt-2">' + money(product.price) + '</p>' +
     '</div>' +
     '</div>' +
     '</div>';
@@ -69,7 +69,7 @@ var liteCardProduct = (product) => {
     '<img src="' + product.picture + '" alt="">' +
     '</div>' +
     '<div class="col-9">' +
-    '<h6>' + product.name + '</h6>' +
+    '<h6><a href="../../detail.html?product_id='+product.id+'">' + product.name + '</a></h6>' +
     '<p>' + money(product.price) + '</p>' +
     '</div>' +
     '</div>';
@@ -78,7 +78,7 @@ var liteCardProduct = (product) => {
 var categoryFilterRadio = (product) => {
   var priceParam = currentURL.get('price') ?? "None";
   var productCategoryParam = currentURL.get('category') ?? "None";
-  var checkedRadio = '<i class="fas fa-check-circle" style="color:#0E6EFD"></i>';
+  var checkedRadio = '<i class="fas fa-check-circle text-primary"></i>';
   var uncheckedRadio = '<i class="far fa-circle" style="color:#BFBFBF"></i>';
   return '<div>' +
     '<a href="./collections.html?category=' + product + '&price=' + priceParam + '">' +
@@ -95,7 +95,7 @@ var categoryFilterRadio = (product) => {
 var priceRangeFilterRadio = (price, index) => {
   var priceParam = currentURL.get('price') ?? "None";
   var productCategoryParam = currentURL.get('category') ?? "None";
-  var checkedRadio = '<i class="fas fa-check-circle" style="color:#0E6EFD"></i>';
+  var checkedRadio = '<i class="fas fa-check-circle text-primary"></i>';
   var uncheckedRadio = '<i class="far fa-circle" style="color:#BFBFBF"></i>';
   return '<div>' +
     '<a href="./collections.html?price=' + (index == 0 ? "None" : index) + '&category=' + productCategoryParam + '">' +
@@ -194,10 +194,33 @@ $(document).ready(function () {
   header.innerHTML = await headerContent.text();
   footer.innerHTML = await footerContent.text();
 
+  getProducts('id','asc',0,(products) => {
+    var footerCategories = document.getElementById('footerCategories');
+    [... new Set(products.map(data => data.category))].forEach(product => {
+      footerCategories.innerHTML += '<li><a href="../../collections.html?category='+product+'&price=None">Category '+product+'</a></li>'
+    });
+  });
+
   $(document).ready(function () {
     var pageload = $('#pageload');
     if (!pageload.hasClass('d-none')) {
       pageload.addClass('d-none');
+    }
+  });
+
+  $('.closeSidebar').on('click', function() {
+    var sidebar = $('.sidebar');
+    if (sidebar.hasClass('active'))
+    {
+      sidebar.removeClass('active');
+    }
+  });
+
+  $('.openSidebar').on('click', function() {
+    var sidebar = $('.sidebar');
+    if (!sidebar.hasClass('active'))
+    {
+      sidebar.addClass('active');
     }
   });
 

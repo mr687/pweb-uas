@@ -7,7 +7,7 @@
   <title>Dreamroom | Dream collections</title>
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/vendor/icofont/icofont.min.css">
-  <link rel="stylesheet" href="assets/css/app.css?v=56">
+  <link rel="stylesheet" href="assets/css/app.css?v=562">
 </head>
 
 <body>
@@ -48,10 +48,12 @@
             <div class="col-md-3 d-none d-md-block">
               <p class="py-1 h5"><b>Product Categories</b></p>
               <div class="categories--content"></div>
-              <div class="py-3"></div>
+              <hr>
+              <div class="py-2"></div>
               <p class="py-1 h5"><b>Price</b></p>
               <div class="price--content"></div>
-              <div class="py-3"></div>
+              <hr>
+              <div class="py-2"></div>
               <p class="py-1 h5"><b>Best Sellers</b></p>
               <div class="best-sellers--content"></div>
             </div>
@@ -81,6 +83,7 @@
 
     getCategories(
       (products) => {
+        console.log(products);
         products.forEach(product => {
           categoriesContent.innerHTML += categoryFilterRadio(product);
         });

@@ -1,7 +1,10 @@
 <div class="container">
   <nav class="navbar navbar-expand-lg navbar-light py-4 bg-light justify-content-between">
+    <div class="d-block d-lg-none">
+      <a href="javascript:void(0);" class="openSidebar"><i class="icofont-navigation-menu icofont-2x"></i></a>
+    </div>
     <a class="navbar-brand" href="../index.html">Dreamroom</a>
-    <ul class="navbar-nav mb-2 mb-lg-0">
+    <ul class="navbar-nav mb-2 mb-lg-0 d-none d-lg-flex">
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
       </li>
@@ -17,4 +20,18 @@
       <span id="cartItemsCount"></span>
     </a>
   </nav>
+</div>
+
+<div class="position-fixed sidebar closeSidebar">
+  <div class="navigation">
+    <ul>
+      <li class="mb-4 d-flex justify-content-between">
+        <a href="javascript:void(0);" style="font-size: 20px !important;font-weight: 600 !important;">Navigation</a>
+        <a href="javascript:void(0);" class="closeSidebar"><b>X</b></a>
+      </li>
+      <li class="mb-3"><a href="../index.html">Home</a></li>
+      <li class="mb-3"><a href="../collections.html?category=None&price=None">Collections</a></li>
+      <li class="mb-3"><a href="../contact.html">Contact Us</a></li>
+    </ul>
+  </div>
 </div>
