@@ -7,6 +7,8 @@ var cookie = {
   }
 };
 
+var currentURL = new URLSearchParams(window.location.search);
+
 var DB = (table = undefined, callback) => {
   if (table !== undefined && table !== null) {
     var xobj = new XMLHttpRequest();
@@ -61,18 +63,52 @@ var cardProduct = (product) => {
     '</div>';
 };
 
-var categoryProduct = (product, checked = false, onclick) => {
-  var productId = new URLSearchParams(window.location.search).get('category');
-  return '<div class="form-check ">' +
+var liteCardProduct = (product) => {
+  return '<div class="row py-2">' +
+    '<div class="col-3">' +
+    '<img src="' + product.picture + '" alt="">' +
+    '</div>' +
+    '<div class="col-9">' +
+    '<h6>' + product.name + '</h6>' +
+    '<p>' + money(product.price) + '</p>' +
+    '</div>' +
+    '</div>'
+}
 
-    '<a href="./collections.html?category=' + product + '">' +
-    (productId == product ? '~~' : '') +
-    '<label class="form-check-label" for="' + 'flexRadioDefault' + product + '" >' +
+var categoryFilterRadio = (product) => {
+  var priceParam = currentURL.get('price') ?? "None";
+  var productCategoryParam = currentURL.get('category') ?? "None";
+  var checkedRadio = '<i class="fas fa-check-circle" style="color:#0E6EFD"></i>';
+  var uncheckedRadio = '<i class="far fa-circle" style="color:#BFBFBF"></i>';
+  return '<div>' +
+    '<a href="./collections.html?category=' + product + '&price=' + priceParam + '">' +
+    ((productCategoryParam == null && product == "None") ? checkedRadio :
+      productCategoryParam == product ? checkedRadio :
+      uncheckedRadio) +
+    '<label class="form-check-label px-2" for="' + 'flexRadioDefault' + product + '" >' +
     product +
     '</label>' +
     '</a>' +
     '</div>';
 };
+
+var priceRangeFilterRadio = (price, index) => {
+  var priceParam = currentURL.get('price') ?? "None";
+  var productCategoryParam = currentURL.get('category') ?? "None";
+  var checkedRadio = '<i class="fas fa-check-circle" style="color:#0E6EFD"></i>';
+  var uncheckedRadio = '<i class="far fa-circle" style="color:#BFBFBF"></i>';
+  return '<div>' +
+    '<a href="./collections.html?price=' + (index == 0 ? "None" : index) + '&category=' + productCategoryParam + '">' +
+    (((priceParam == "None" && index == 0)) ? checkedRadio :
+      priceParam == index ? checkedRadio :
+      uncheckedRadio) +
+    '<label class="form-check-label px-2" for="' + 'flexRadioDefault' + index + '" >' +
+    price +
+    '</label>' +
+    '</a>' +
+    '</div>';
+}
+
 
 var getCategories = (callback) => {
   DB('products', (products) => {
@@ -80,8 +116,32 @@ var getCategories = (callback) => {
     products.forEach(v => {
       categories.push(v['category'])
     })
-    callback([...new Set(categories)])
+    callback(["None", ...new Set(categories)])
   });
+}
+
+var getProductsByPrices = (priceRange, callback) => {
+  if (priceRange != 'None') {
+    DB('products', (products) => {
+      switch (priceRange) {
+        case "1":
+          callback(products.filter(value => value.price >= 0 && value.price <= 800000))
+          break;
+        case "2":
+          callback(products.filter(value => value.price >= 800000 && value.price <= 1500000))
+          break;
+        case "3":
+          callback(products.filter(value => value.price >= 1500000 && value.price <= 5000000))
+          break;
+        case "4":
+          callback(products.filter(value => value.price >= 5000000))
+          break;
+        default:
+          callback(products);
+          break;
+      }
+    });
+  }
 }
 
 var getPrices = (callback) => {

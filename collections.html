@@ -11,6 +11,19 @@
 </head>
 
 <body>
+  <div id="pageload">
+    <div style="text-align: center;margin-top: 50vh;transform: translateY(-50%);">
+      <div class="spinner-grow text-primary" role="status" style="width: 4rem;height: 4rem;">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow text-primary" role="status" style="margin-left: -20px;">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow spinner-grow-sm text-primary" role="status" style="margin-left: -20px;">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
   <div id="app">
     <header id="header"></header>
 
@@ -33,42 +46,14 @@
         <div class="container">
           <div class="row">
             <div class="col-md-3 d-none d-md-block">
-              <p class="py-1 h5"><b>All Categories</b></p>
-              <div class="categories--content">
-
-              </div>
-              <div class="py-5"></div>
+              <p class="py-1 h5"><b>Product Categories</b></p>
+              <div class="categories--content"></div>
+              <div class="py-3"></div>
               <p class="py-1 h5"><b>Price</b></p>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioPriceDefault" id="flexRadioPrice1" checked>
-                <label class="form-check-label" for="flexRadioPrice1">
-                  None
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioPriceDefault" id="flexRadioPrice1">
-                <label class="form-check-label" for="flexRadioPrice1">
-                  $0 - $50
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioPriceDefault" id="flexRadioPrice2">
-                <label class="form-check-label" for="flexRadioPrice2">
-                  $150 - $200
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioPriceDefault" id="flexRadioPrice3">
-                <label class="form-check-label" for="flexRadioPrice3">
-                  $200 - $250
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioPriceDefault" id="flexRadioPrice4">
-                <label class="form-check-label" for="flexRadioPrice4">
-                  $50 - $100
-                </label>
-              </div>
+              <div class="price--content"></div>
+              <div class="py-3"></div>
+              <p class="py-1 h5"><b>Best Sellers</b></p>
+              <div class="best-sellers--content"></div>
             </div>
             <div class="col-md-9">
               <div class="products--content row pt-5"></div>
@@ -82,17 +67,34 @@
   </div>
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="https://kit.fontawesome.com/b20913e551.js" crossorigin="anonymous"></script>
   <script>
     var productsContent = document.querySelector('.products .products--content');
     var categoriesContent = document.querySelector('.categories--content');
+    var bestSellerContent = document.querySelector('.best-sellers--content');
+    var priceContent = document.querySelector('.price--content');
+
+    var priceQuery = new URLSearchParams(window.location.search).get('price');
 
     getCategories(
       (products) => {
-        categoriesContent.innerHTML += categoryProduct("None", true, () => { window.location("./collections.html") });
         products.forEach(product => {
-          categoriesContent.innerHTML += categoryProduct(product, false, () => { window.location("./collections.html?category=" + product) });
+          categoriesContent.innerHTML += categoryFilterRadio(product);
+        });
+      }
+    )
 
+    getProductsByPrices(
+      priceQuery,
+      (products) => {
+        products.forEach(product => {
+          var categoryQuery = new URLSearchParams(window.location.search).get('category');
+          if (product.category == categoryQuery || categoryQuery == "None") {
+            productsContent.innerHTML += cardProduct(product);
+          }
         });
       }
     )
@@ -103,14 +105,38 @@
       limit = 0,
       (products) => {
         products.forEach(product => {
-          var query = new URLSearchParams(window.location.search).get('category');
-          if (query == "None") {
+          var categoryQuery = new URLSearchParams(window.location.search).get('category');
+          if (categoryQuery == "None" && priceQuery == "None") {
             productsContent.innerHTML += cardProduct(product);
           }
-          if (product.category == query) {
+          if (priceQuery == "None" && product.category == categoryQuery) {
             productsContent.innerHTML += cardProduct(product);
           }
 
+        });
+      });
+
+
+    var priceRange = [
+      "None",
+      "Rp. 0 - Rp. 800.000",
+      "Rp. 800.000 - Rp. 1.500.000",
+      "Rp. 1.500.000 - Rp. 5.000.000",
+      "> Rp. 5.000.000"];
+    priceRange.forEach((price, index) => {
+      priceContent.innerHTML += priceRangeFilterRadio(price, index);
+    });
+
+
+    //get Top Sales
+    getProducts(
+      orderBy = 'sales',
+      orderByDirection = 'desc',
+      limit = 0,
+      (products) => {
+        products.length = 5;
+        products.forEach(product => {
+          bestSellerContent.innerHTML += liteCardProduct(product);
         });
       });
 
