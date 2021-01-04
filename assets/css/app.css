@@ -62,6 +62,27 @@ a:hover,a{
   border: none !important;
 }
 
+.table-secondary th{
+  border-color: #cacbcd !important;
+}
+
+.table td{
+  border-color: #cacbcd !important;
+}
+
+.table-head{
+  font-weight: 800;
+  background-color: #f7f7f7;
+}
+
+.table-foot{
+  background-color: #f7f7f7;
+}
+
+.border-none th{
+  border: none !important;
+}
+
 footer#footer{
   padding-top: 3rem;
   background-color: #1a1a1a;
