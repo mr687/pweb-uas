@@ -72,8 +72,8 @@ var liteCardProduct = (product) => {
     '<h6>' + product.name + '</h6>' +
     '<p>' + money(product.price) + '</p>' +
     '</div>' +
-    '</div>'
-}
+    '</div>';
+};
 
 var categoryFilterRadio = (product) => {
   var priceParam = currentURL.get('price') ?? "None";
@@ -107,7 +107,7 @@ var priceRangeFilterRadio = (price, index) => {
     '</label>' +
     '</a>' +
     '</div>';
-}
+};
 
 
 var getCategories = (callback) => {
@@ -115,10 +115,10 @@ var getCategories = (callback) => {
     var categories = [];
     products.forEach(v => {
       categories.push(v['category'])
-    })
+    });
     callback(["None", ...new Set(categories)])
   });
-}
+};
 
 var getProductsByPrices = (priceRange, callback) => {
   if (priceRange != 'None') {
@@ -142,17 +142,17 @@ var getProductsByPrices = (priceRange, callback) => {
       }
     });
   }
-}
+};
 
 var getPrices = (callback) => {
   DB('products', (products) => {
     var categories = [];
     products.forEach(v => {
       categories.push(v['category'])
-    })
+    });
     callback([...new Set(categories)])
   });
-}
+};
 
 var getProducts = (orderBy = 'id', orderByDirection = 'asc', limit = 0, callback) => {
   DB('products', (products) => {
