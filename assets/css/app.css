@@ -257,3 +257,16 @@ footer ul li a:hover{
   background-color: white;
   z-index:11;
 }
+
+.collections-dropdown{
+  top: 60px;
+  background-color: white;
+  left: 100px;
+  display: none;
+  right: 100px;
+  z-index: 6;
+}
+
+.navbar .onhover:hover .collections-dropdown{
+  display: block !important;
+}

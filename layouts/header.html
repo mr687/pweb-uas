@@ -1,5 +1,5 @@
 <div class="container">
-  <nav class="navbar navbar-expand-lg navbar-light py-4 bg-light justify-content-between">
+  <nav class="navbar navbar-expand-lg navbar-light py-4 bg-light justify-content-between position-static">
     <div class="d-block d-lg-none">
       <a href="javascript:void(0);" class="openSidebar"><i class="icofont-navigation-menu icofont-2x"></i></a>
     </div>
@@ -8,8 +8,37 @@
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
       </li>
-      <li class="nav-item mx-3">
-        <a class="nav-link" aria-current="page" href="../collections.html?category=None&price=None">Collections</a>
+      <li class="nav-item mx-3 onhover">
+        <a class="nav-link" aria-current="page" href="../collections.html?category=None&price=None">
+          Collections
+        </a><div class="collections-dropdown position-absolute shadow-sm p-4 rounded">
+          <div class="row justify-content-center">
+            <div class="col-2">
+              <a href="../collections.html?category=None&price=None">
+                <img src="../assets/products/speaker_trending.jpg" style="max-height: 100%;">
+                <h5 class="mt-3">Semua</h5>
+              </a>
+            </div>
+            <div class="col-2">
+              <a href="../collections.html?category=Kursi&price=None">
+                <img src="../assets/products/Clarice_Tall_Wingback.jpg" style="max-height: 100%;">
+                <h5 class="mt-3">Kursi</h5>
+              </a>
+            </div>
+            <div class="col-2">
+              <a href="../collections.html?category=Meja&price=None">
+                <img src="../assets/products/Ravenna_Home_Springdale.jpg" style="max-height: 100%;">
+                <h5 class="mt-3">Meja</h5>
+              </a>
+            </div>
+            <div class="col-2">
+              <a href="../collections.html?category=Kasur&price=None">
+                <img src="../assets/products/Hillsdale_Furniture_Lawler_Bed.jpg" style="max-height: 100%;">
+                <h5 class="mt-3">Kasur</h5>
+              </a>
+            </div>
+          </div>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" aria-current="page" href="../contact.html">Contact Us</a>
