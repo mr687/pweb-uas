@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dreamroom | Dream collections</title>
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/icofont/icofont.min.css">
+  <link rel="stylesheet" href="assets/css/app.css?v=562">
+</head>
+
+<body>
+  <div id="pageload">
+    <div style="text-align: center;margin-top: 50vh;transform: translateY(-50%);">
+      <div class="spinner-grow text-primary" role="status" style="width: 4rem;height: 4rem;">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow text-primary" role="status" style="margin-left: -20px;">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow spinner-grow-sm text-primary" role="status" style="margin-left: -20px;">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+  <div id="app">
+    <main id="main">
+      <div class="row" style="height: 100vh;">
+        <div class="col-12 col-lg-7 py-5 pe-5" class="h-100" style="background-color: white;box-shadow:0 .125rem .25rem rgba(0,0,0,.075)!important;">
+          <form action="" id="checkoutForm">
+            <div class="row justify-content-end">
+              <div class="col-11 col-md-7">
+                <div class="navbar-brand">Dreamroom</div>
+                <div class="mt-5">
+                  <h6>Contact Information</h6>
+                  <div class="form-group mt-3">
+                    <input type="text" class="form-control" name="email" placeholder="Email or phone number" required="">
+                  </div>
+                  <h6 class="mt-5">Shipping Address</h6>
+                  <div class="form-group row mt-3">
+                    <div class="col-12 col-md-6 mb-3">
+                      <input type="text" class="form-control" name="first_name" placeholder="First Name" required="">
+                    </div>
+                    <div class="col-12 col-md-6 mb-3">
+                      <input type="text" class="form-control" name="last_name" placeholder="Last Name (optional)">
+                    </div>
+                  </div>
+                  <div class="form-group mt-3">
+                    <input type="text" class="form-control" name="address" placeholder="Address" required="">
+                  </div>
+                  <div class="form-group mt-3">
+                    <input type="text" class="form-control" name="city" placeholder="City" required="">
+                  </div>
+                  <div class="form-group row mt-3">
+                    <div class="col-12 col-md-6 mb-3">
+                      <input type="text" class="form-control" name="province" placeholder="Province" required="">
+                    </div>
+                    <div class="col-12 col-md-6 mb-3">
+                      <input type="text" class="form-control" name="postal_code" placeholder="Postal Code" required>
+                    </div>
+                  </div>
+                  <div class="form-group mt-3 d-flex justify-content-between">
+                    <a href="cart.html"><i class="icofont-rounded-left"></i> Back to cart</a>
+                    <button type="submit" class="btn btn-dark btn-lg">Continue to Payment</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-5 py-5 h-100 d-none d-lg-block ps-4" style="background-color: #ededed;">
+          <div class="checkout-items"></div>
+          <hr style="width: 62%;">
+          <div class="row justify-content-between" style="width: 62%;">
+            <div class="col text-muted">Subtotal</div>
+            <div class="col text-end" id="checkoutSubTotal">Rp 0</div>
+          </div>
+          <div class="row justify-content-between" style="width: 62%;">
+            <div class="col text-muted">Shipping</div>
+            <div class="col text-end">Rp 25.000</div>
+          </div>
+          <hr style="width: 62%;">
+          <div class="row justify-content-between" style="width: 62%;">
+            <div class="col h5">Total</div>
+            <div class="col text-end h3" id="checkoutTotal">Rp 0</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="https://kit.fontawesome.com/b20913e551.js" crossorigin="anonymous"></script>
+  <script>
+    var checkoutItems = document.querySelector('.checkout-items');
+    var dataCarts = JSON.parse(cookie.get('dreamroom.cart.items'));
+    var checkoutSubTotal = 0;
+    var checkoutTotal = 0;
+    dataCarts.forEach(cart => {
+      findProduct(cart.id, (product) => {
+        checkoutItems.innerHTML += '<div class="row justify-content-start">'+
+              '<div class="col-auto">'+
+                '<div class="card">'+
+                  '<div class="card-body p-1 position-relative">'+
+                    '<img src="assets/products/botol_trending.jpg" width="50">'+
+                    '<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">'+cart.qty+'</span>'+
+                  '</div>'+
+                '</div>'+
+              '</div>'+
+              '<div class="col-4">'+
+                '<h6 style="line-height: 60px;height: 100%;">'+product.name+'</h6>'+
+              '</div>'+
+              '<div class="col-2">'+
+                '<p style="line-height: 60px;height: 100%;" class="text-end">'+money(product.price*cart.qty)+'</p>'+
+              '</div>'+
+            '</div>';
+      });
+      checkoutSubTotal += (cart.price * cart.qty)
+    });
+    checkoutTotal = parseInt(checkoutSubTotal) + 25000;
+    document.getElementById('checkoutSubTotal').innerHTML = money(checkoutSubTotal);
+    document.getElementById('checkoutTotal').innerHTML = money(checkoutTotal);
+
+    $('#checkoutForm').on('submit', function(e) {
+      e.preventDefault();
+      window.location = './orderFinish.html';
+    });
+  </script>
+</body>
+
+</html>

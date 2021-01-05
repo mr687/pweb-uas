@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dreamroom | Dream collections</title>
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/icofont/icofont.min.css">
+  <link rel="stylesheet" href="assets/css/app.css?v=562">
+</head>
+
+<body>
+  <div id="pageload">
+    <div style="text-align: center;margin-top: 50vh;transform: translateY(-50%);">
+      <div class="spinner-grow text-primary" role="status" style="width: 4rem;height: 4rem;">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow text-primary" role="status" style="margin-left: -20px;">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow spinner-grow-sm text-primary" role="status" style="margin-left: -20px;">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+  <div id="app">
+    <main id="main" class="d-none">
+      <div class="container text-center p-5">
+        <div style="margin-top: 50vh;transform: translateY(-50%);">
+          <h1 class="display-1 position-relative">
+            Payment has been processed.
+            <span class="position-absolute top-0 start-100 translate-middle text-primary">
+              <i class="fas fa-check-circle"></i>
+            </span>
+          </h1>
+          <p style="margin: 3.5rem 0;font-size: 18px;width: 300px; margin-left: auto;margin-right: auto;">
+            Your order confirmed sortly. <br>
+            Thank You!
+          </p>
+          <a href="index.html" class="btn btn-dark btn-lg">Go to homepage</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="https://kit.fontawesome.com/b20913e551.js" crossorigin="anonymous"></script>
+  <script>
+    var dataCarts = JSON.parse(cookie.get('dreamroom.cart.items'));
+    if (dataCarts)
+    {
+      if($('#main').hasClass('d-none'))
+      {
+        $('#main').removeClass('d-none');
+      }
+      cookie.set('dreamroom.cart.items', null, {path:'/'});
+    }else{
+      window.location = 'index.html';
+    }
+  </script>
+</body>
+
+</html>

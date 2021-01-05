@@ -84,7 +84,8 @@
                       <p>Please also note that the shipping rates for many items we sell are weight-based. The weight of any such item can be found on its detail page. To reflect the policies of the shipping companies we use, all weights will be rounded up to the next full pound.</p>
                     </div>
                   </div>
-                  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...
+                  <div class="tab-pane fade productReview" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    
                   </div>
                 </div>
               </div>
@@ -118,6 +119,13 @@
       document.getElementById('productDescription').innerHTML = product.sort_desc;
       document.getElementById('productPrice').innerHTML = money(product.price);
       document.getElementById('productStock').innerHTML = product.stocks;
+      product.reviews.forEach(review => {
+        document.querySelector('.productReview').innerHTML += '<div style="padding: 0.2rem;">'+
+                      '<h6>'+review.nama+'</h6>' +
+                    '<p class="text-muted">'+review.text+'</p>' +
+                    '<hr>' +
+                    '</div>';
+      });
       document.getElementById('productCategory').innerHTML = product.category;
       document.getElementById('productPicture').setAttribute('src', product.picture);
       document.getElementById('product_full_desc').innerHTML = product.description;
